@@ -16,9 +16,7 @@ class BusinessController extends Controller
      * @return Response
      */
     public function getBusinesses(Business $business, int $number_of_records = 20): Response
-    {
-
-        
+    {        
         $response = new Response();
         $response->setContent(
             json_encode(
@@ -33,7 +31,7 @@ class BusinessController extends Controller
     
     
     /**
-     * Returns a information on a business with id provided
+     * Returns information on a business with id provided
      *
      * @param Business $business
      * @param integer $business_id
@@ -144,7 +142,7 @@ class BusinessController extends Controller
         $result = 0;
         $business = Business::find($business_id);
         
-        if($business->delete()){
+        if($business && $business->delete()){
             $result = 1;
         }
 
