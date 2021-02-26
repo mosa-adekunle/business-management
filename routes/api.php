@@ -20,16 +20,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
-// Route::get('/get-business/{id}', [BusinessController::class, 'getBusiness']);
-// Route::get('/get-businesses', [BusinessController::class, 'getBusinesses']);
-// Route::get('/store-businesses',  [BusinessController::class, 'storeBusiness']);
-// Route::put('/update-business',  [BusinessController::class, 'updateBusiness']);
-// Route::delete('/delete-business',  [BusinessController::class, 'deleteBusinesses']);
-
-
 Route::get('/get-business/{id}', [BusinessController::class, 'getBusiness']);
+Route::get('/get-businesses/{number_of_records}', [BusinessController::class, 'getBusinesses']);
 Route::get('/get-businesses', [BusinessController::class, 'getBusinesses']);
-Route::get('/store-business',  [BusinessController::class, 'storeBusiness']);
-Route::get('/update-business/{id}',  [BusinessController::class, 'updateBusiness']);
-Route::get('/delete-business/{id}',  [BusinessController::class, 'deleteBusinesses']);
+Route::post('/store-business',  [BusinessController::class, 'storeBusiness']);
+Route::put('/update-business/{id}',  [BusinessController::class, 'updateBusiness']);
+Route::delete('/delete-business/{id}',  [BusinessController::class, 'deleteBusinesses']);

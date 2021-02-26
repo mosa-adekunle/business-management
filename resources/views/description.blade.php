@@ -17,6 +17,7 @@
         <h2>End points </h2>
         <ul>
             <li>GET /get-businesses</li>
+            <li>GET /get-businesses/{number_of_records_per_page}</li>
             <li>GET /get-business/{id}</li>
             <li>POST /store-business</li>
             <li>PUT /update-business/{id}</li>
