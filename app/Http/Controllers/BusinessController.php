@@ -68,7 +68,7 @@ class BusinessController extends Controller
             $business->business_name = $request->business_name;
             $business->price = $request->price;
             $business->city = $request->city ?? "";               
-            if($business->save()) $result = 1;
+            if($business->save()) $result = $business->id;
         }
                 
         $response = new Response();
